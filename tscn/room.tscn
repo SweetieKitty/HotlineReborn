@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dj4yp1lteor63"]
+
+[ext_resource type="Script" uid="uid://d3jgipb3dlw8l" path="res://scripts/room.gd" id="1_7lpl2"]
+[ext_resource type="Texture2D" uid="uid://b4if3ik76oic1" path="res://assets/DoorClose.png" id="2_5es1x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(534, 525)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(534, 530)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5gy4"]
+size = Vector2(542, 533)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbdty"]
+size = Vector2(537, 530)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_we5va"]
+size = Vector2(1938, 1099)
+
+[node name="Room" type="Area2D" unique_id=198948550]
+script = ExtResource("1_7lpl2")
+waves = Array[int]([2, 3, 5])
+
+[node name="Floor" type="TextureRect" parent="." unique_id=1190242001]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=703576107]
+
+[node name="Doors" type="Node2D" parent="SpawnPoints" unique_id=1574823449]
+
+[node name="DoorTop" type="StaticBody2D" parent="SpawnPoints/Doors" unique_id=624947136]
+position = Vector2(455, 313)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpawnPoints/Doors/DoorTop" unique_id=1421606899]
+texture = ExtResource("2_5es1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoints/Doors/DoorTop" unique_id=1970256545]
+position = Vector2(-4, 4.5)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="DoorDown" type="StaticBody2D" parent="SpawnPoints/Doors" unique_id=1622530608]
+position = Vector2(455, 313)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpawnPoints/Doors/DoorDown" unique_id=969445137]
+texture = ExtResource("2_5es1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoints/Doors/DoorDown" unique_id=166326257]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="DoorLeft" type="StaticBody2D" parent="SpawnPoints/Doors" unique_id=1492678605]
+position = Vector2(455, 313)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpawnPoints/Doors/DoorLeft" unique_id=1260136863]
+texture = ExtResource("2_5es1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoints/Doors/DoorLeft" unique_id=223709150]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_v5gy4")
+
+[node name="DoorRight" type="StaticBody2D" parent="SpawnPoints/Doors" unique_id=1214371394]
+position = Vector2(455, 313)
+
+[node name="Sprite2D" type="Sprite2D" parent="SpawnPoints/Doors/DoorRight" unique_id=1281356574]
+texture = ExtResource("2_5es1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoints/Doors/DoorRight" unique_id=2111385300]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_qbdty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124571527]
+position = Vector2(964, 552)
+shape = SubResource("RectangleShape2D_we5va")

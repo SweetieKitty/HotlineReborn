@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bele2tsb6rlhf"]
+
+[ext_resource type="Script" uid="uid://dxcdq1dmqwtu2" path="res://scripts/player.gd" id="1_3c7ea"]
+[ext_resource type="PackedScene" uid="uid://cujyv6jdc7cqn" path="res://tscn/OsamaBullet.tscn" id="2_u4c7w"]
+[ext_resource type="Texture2D" uid="uid://my75ijnbl4gj" path="res://assets/OSAMA.png" id="3_6sl1v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we5va"]
+radius = 37.01351
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5gy4"]
+radius = 27.166155
+
+[node name="Player" type="CharacterBody2D" unique_id=19746391]
+collision_layer = 3
+script = ExtResource("1_3c7ea")
+bullet_scene = ExtResource("2_u4c7w")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1916164725]
+position = Vector2(-1.9999998, -31)
+rotation = -1.5707964
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_6sl1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998448230]
+position = Vector2(-5, 0)
+shape = SubResource("CircleShape2D_we5va")
+
+[node name="GunPoint" type="Node2D" parent="." unique_id=779969386]
+position = Vector2(75, 2)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1771370337]
+
+[node name="player_hitbox" type="CollisionShape2D" parent="Area2D" unique_id=1735322743]
+z_index = 1
+position = Vector2(11, 0)
+shape = SubResource("CircleShape2D_v5gy4")
+
+[node name="attack_cooldown" type="Timer" parent="Area2D" unique_id=30188385]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Area2D/attack_cooldown" to="." method="_on_attack_cooldown_timeout"]

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://13ajr7u64n1q"]
+
+[ext_resource type="Script" uid="uid://bb5owfhm8bxey" path="res://scripts/weapon_item.gd" id="1_g3m6n"]
+[ext_resource type="Texture2D" uid="uid://bbmwofknvw2es" path="res://assets/weapon_sprite.png" id="2_g3m6n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vrlf"]
+radius = 67.0
+
+[node name="Item" type="Area2D" unique_id=1617296509]
+script = ExtResource("1_g3m6n")
+
+[node name="ShotgunSprite" type="Sprite2D" parent="." unique_id=817624148]
+position = Vector2(2.9999924, -2.999999)
+scale = Vector2(0.6651376, 0.66923076)
+texture = ExtResource("2_g3m6n")
+region_enabled = true
+region_rect = Rect2(281, 258, 218, 65)
+
+[node name="AutoRifleSprite" type="Sprite2D" parent="." unique_id=145682837]
+position = Vector2(0, 4.000001)
+scale = Vector2(0.6238532, 0.5493827)
+texture = ExtResource("2_g3m6n")
+region_enabled = true
+region_rect = Rect2(36, 255, 218, 81)
+
+[node name="RocketSprite" type="Sprite2D" parent="." unique_id=423699028]
+position = Vector2(5, -1)
+scale = Vector2(0.67105263, 0.6511628)
+texture = ExtResource("2_g3m6n")
+region_enabled = true
+region_rect = Rect2(522, 249, 228, 86)
+
+[node name="MinigunSprite" type="Sprite2D" parent="." unique_id=2079693351]
+position = Vector2(-3, -4)
+scale = Vector2(0.60958904, 0.5744681)
+texture = ExtResource("2_g3m6n")
+region_enabled = true
+region_rect = Rect2(773, 241, 219, 94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1608346818]
+shape = SubResource("CircleShape2D_8vrlf")

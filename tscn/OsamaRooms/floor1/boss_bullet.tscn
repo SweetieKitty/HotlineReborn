@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://byeqaahcu7gm4"]
+
+[ext_resource type="Script" uid="uid://cob5emvaf2r8s" path="res://scripts/boss_bullet.gd" id="1_xmv43"]
+[ext_resource type="Texture2D" uid="uid://bwppbfuu8ohh0" path="res://assets/osamabullet.png" id="2_k1a43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qg0q1"]
+size = Vector2(51.502502, 20.557499)
+
+[node name="OsamaBullet" type="Area2D" unique_id=1233117501]
+script = ExtResource("1_xmv43")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=426707432]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(20.257, -8.70875)
+scale = Vector2(0.06100237, 0.032515798)
+texture = ExtResource("2_k1a43")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=641477482]
+position = Vector2(20.248749, -8.721251)
+shape = SubResource("RectangleShape2D_qg0q1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

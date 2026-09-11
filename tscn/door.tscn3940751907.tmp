@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://btj0uhruwsufg"]
+
+[ext_resource type="Script" uid="uid://7pw5c3pfh10j" path="res://scripts/door.gd" id="1_mairw"]
+[ext_resource type="Texture2D" uid="uid://b4if3ik76oic1" path="res://assets/DoorClose.png" id="1_v4ngw"]
+[ext_resource type="Texture2D" uid="uid://d1ac8rfv17ik3" path="res://assets/DoorOpen.png" id="3_276s7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(350, 353)
+
+[node name="Door" type="Node2D" unique_id=638737696]
+script = ExtResource("1_mairw")
+
+[node name="DoorCloseTop" type="Sprite2D" parent="." unique_id=1555622964]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_v4ngw")
+
+[node name="DoorCloseBottom" type="Sprite2D" parent="." unique_id=1463182840]
+rotation = -3.1415925
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("1_v4ngw")
+
+[node name="DoorCloseRight" type="Sprite2D" parent="." unique_id=46177275]
+rotation = 1.5707964
+scale = Vector2(0.35, 0.3586003)
+texture = ExtResource("1_v4ngw")
+
+[node name="DoorCloseLeft" type="Sprite2D" parent="." unique_id=1412173221]
+rotation = -1.5707964
+scale = Vector2(0.35, 0.2838203)
+texture = ExtResource("1_v4ngw")
+
+[node name="DoorOpenTop" type="Sprite2D" parent="." unique_id=1380533563]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_276s7")
+
+[node name="DoorOpenBottom" type="Sprite2D" parent="." unique_id=298948331]
+rotation = -3.1415925
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_276s7")
+
+[node name="DoorOpenRight" type="Sprite2D" parent="." unique_id=105700070]
+rotation = 1.5707964
+scale = Vector2(0.35, 0.3586003)
+texture = ExtResource("3_276s7")
+
+[node name="DoorOpenLeft" type="Sprite2D" parent="." unique_id=606982893]
+rotation = -1.5707964
+scale = Vector2(0.35, 0.2838203)
+texture = ExtResource("3_276s7")
+
+[node name="TeleportZone" type="Area2D" parent="." unique_id=1152440930]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleportZone" unique_id=1226565923]
+position = Vector2(-3, -2.5)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[connection signal="body_entered" from="TeleportZone" to="." method="_on_teleport_zone_body_entered"]

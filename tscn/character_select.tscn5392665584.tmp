@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://rsim21mm1ni0"]
+
+[ext_resource type="Script" uid="uid://bkn3b3ewh25he" path="res://scripts/character_select.gd" id="1_vkwal"]
+
+[node name="Character_select" type="Control" unique_id=162899403]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vkwal")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1182695169]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03137255, 0.011764706, 0.05882353, 1)
+
+[node name="MainContainer" type="MarginContainer" parent="." unique_id=56058525]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 810.0
+offset_top = 430.0
+offset_right = 1204.0
+offset_bottom = 677.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="MainContainer" unique_id=47704678]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="TitleLabel" type="Label" parent="MainContainer/VBox" unique_id=902348311]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.6, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 52
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MainContainer/VBox" unique_id=404297789]
+layout_mode = 2
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 25
+columns = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/VBox" unique_id=1525128068]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MainContainer/VBox/HBoxContainer" unique_id=1062524438]
+custom_minimum_size = Vector2(160, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6901961, 0.6901961, 0.7529412, 1)
+theme_override_font_sizes/font_size = 22
+text = "◀ НАЗАД"
+
+[node name="StartButton" type="Button" parent="MainContainer/VBox/HBoxContainer" unique_id=2127996409]
+custom_minimum_size = Vector2(160, 55)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6901961, 0.6901961, 0.7529412, 1)
+theme_override_font_sizes/font_size = 22
+text = "ВИБРАТИ"
+
+[connection signal="pressed" from="MainContainer/VBox/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainContainer/VBox/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

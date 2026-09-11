@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bdbve4yrsdynf"]
+
+[ext_resource type="Script" uid="uid://7eiripjpwqrn" path="res://scripts/level_generator.gd" id="1_j4b5a"]
+[ext_resource type="PackedScene" uid="uid://13ajr7u64n1q" path="res://tscn/weapon_item.tscn" id="3_j4b5a"]
+[ext_resource type="PackedScene" uid="uid://bele2tsb6rlhf" path="res://tscn/player.tscn" id="3_j16yf"]
+[ext_resource type="PackedScene" uid="uid://co5jyvymnu4jv" path="res://tscn/minimap.tscn" id="4_uk58c"]
+
+[node name="Mainworld" type="Node2D" unique_id=2106232333]
+
+[node name="levelgenerator" type="Node2D" parent="." unique_id=81048687 node_paths=PackedStringArray("minimap")]
+script = ExtResource("1_j4b5a")
+player_scene = ExtResource("3_j16yf")
+minimap = NodePath("../CanvasLayer/Minimap")
+weapon_item_scene = ExtResource("3_j4b5a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1379799061]
+
+[node name="Minimap" parent="CanvasLayer" unique_id=10290886 instance=ExtResource("4_uk58c")]
+offset_left = -204.99988
+offset_top = 117.0
+offset_right = -105.666626
+offset_bottom = 213.66667

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dra8ofhniwduy"]
+
+[ext_resource type="Script" uid="uid://cm5yj3taucppm" path="res://scripts/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://i5q01nucxdq6" path="res://assets/musor0.png" id="2_m7vtn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7vtn"]
+radius = 55.03635
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 911.0022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vrlf"]
+radius = 104.0769
+
+[node name="Enemy" type="CharacterBody2D" unique_id=65158985]
+script = ExtResource("1_4gyqm")
+speed = 90.0
+
+[node name="AimPoint" type="Node2D" parent="." unique_id=230089447]
+position = Vector2(1, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=408328603]
+position = Vector2(-1, -5.0000005)
+scale = Vector2(0.3278491, 0.36875)
+texture = ExtResource("2_m7vtn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1125844803]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_m7vtn")
+
+[node name="detection_area" type="Area2D" parent="." unique_id=725765183]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area" unique_id=1465894369]
+visible = false
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=899868993]
+
+[node name="enemy_hitbox" type="CollisionShape2D" parent="Area2D" unique_id=948508933]
+visible = false
+shape = SubResource("CircleShape2D_8vrlf")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

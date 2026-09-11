@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://csp1pqhgjiceu"]
+
+[ext_resource type="Script" uid="uid://d3jgipb3dlw8l" path="res://scripts/room.gd" id="1_r13f0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_we5va"]
+size = Vector2(1938, 1099)
+
+[node name="Room" type="Area2D" unique_id=198948550]
+script = ExtResource("1_r13f0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1831251014]
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=703576107]
+
+[node name="Doors" type="Node2D" parent="SpawnPoints" unique_id=1574823449]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124571527]
+position = Vector2(959, 539.5)
+shape = SubResource("RectangleShape2D_we5va")

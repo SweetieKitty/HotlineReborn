@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ca03u1ypdmt8n"]
+
+[ext_resource type="Texture2D" uid="uid://8djd7wt17bly" path="res://icon.svg" id="3_3wbno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
+size = Vector2(243, 224)
+
+[node name="Boss" type="CharacterBody2D" unique_id=45461831]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=254307269]
+position = Vector2(184.5, 108.75)
+scale = Vector2(1.9140625, 1.7695313)
+texture = ExtResource("3_3wbno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=384446065]
+position = Vector2(182.5, 108)
+shape = SubResource("RectangleShape2D_8vrlf")
+
+[node name="GunPoint" type="Node2D" parent="." unique_id=1159126000]
+position = Vector2(188, 103)

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ca03u1ypdmt8n"]
+
+[ext_resource type="Script" uid="uid://dsfct66l3n413" path="res://scripts/boss.gd" id="1_eqnbd"]
+[ext_resource type="PackedScene" uid="uid://deuasbr1hyyee" path="res://tscn/boss_bullet.tscn" id="2_eqnbd"]
+[ext_resource type="Texture2D" uid="uid://ce1retq2mj2c" path="res://assets/boss1.png" id="3_eqnbd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jswy3"]
+radius = 101.24229
+
+[node name="Boss" type="CharacterBody2D" unique_id=45461831]
+z_index = 1
+script = ExtResource("1_eqnbd")
+speed = 100.0
+bullet_scene = ExtResource("2_eqnbd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=254307269]
+position = Vector2(26.279312, -3.1875)
+scale = Vector2(0.59479713, 0.6240625)
+texture = ExtResource("3_eqnbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=384446065]
+position = Vector2(-2.7206879, -0.1875)
+shape = SubResource("CircleShape2D_jswy3")
+
+[node name="GunPoint" type="Node2D" parent="." unique_id=1159126000]
+position = Vector2(189, -1)

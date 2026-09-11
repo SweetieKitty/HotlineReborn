@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://d4mtrve4tesql"]
+
+[ext_resource type="Script" uid="uid://bkn3b3ewh25he" path="res://scripts/character_select.gd" id="1"]
+
+[node name="CharacterSelect" type="Control" unique_id=1483875417]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="MainContainer" type="MarginContainer" parent="." unique_id=1922721494]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 50
+
+[node name="VBox" type="VBoxContainer" parent="MainContainer" unique_id=1645210979]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="TitleLabel" type="Label" parent="MainContainer/VBox" unique_id=550152006]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.8, 0.5, 1)
+theme_override_font_sizes/font_size = 42
+text = "HOTLINE REBORN
+ВИБІР ПЕРСОНАЖА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MainContainer/VBox" unique_id=1222053425]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/VBox" unique_id=1111790626]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="BackButton" type="Button" parent="MainContainer/VBox/HBoxContainer" unique_id=428648128]
+custom_minimum_size = Vector2(200, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.7, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 24
+text = "◀ НАЗАД"
+
+[node name="StartButton" type="Button" parent="MainContainer/VBox/HBoxContainer" unique_id=392574622]
+custom_minimum_size = Vector2(200, 55)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "✔️ ВИБРАТИ"
+
+[connection signal="pressed" from="MainContainer/VBox/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainContainer/VBox/HBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
